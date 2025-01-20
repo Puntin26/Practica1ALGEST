@@ -76,8 +76,8 @@ import java.util.Scanner;
 	// Tiempo de corrida" 180348363312400 - 180348330133900 = 33178500 equivale a 0.0331785 segundos.
 	
 	
-	
-	
+	//Renso Peralta #10154062
+	//Ian Alvarez #101154672	
 	
 	
 	
