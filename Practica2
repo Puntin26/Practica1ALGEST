@@ -1,0 +1,73 @@
+import java.util.Scanner;
+
+public class App {
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("secuencia de arr, dar espacio para cada uno");
+        String input = sc.nextLine().trim();
+        String[] arreglo = input.split("\\s+");
+        int n = arreglo.length;
+        System.out.println("T:");
+        int T = sc.nextInt();
+
+
+        int mitad = n / 2;
+        //veces
+        int rotIzq = (T + 1) / 2;
+        int rotDer = T / 2;
+        
+
+
+        rotIzq = rotIzq % mitad;
+        rotDer = rotDer % mitad;
+
+        rotarIzq(arreglo,0, mitad, rotIzq);
+        rotarDer(arreglo, mitad, mitad, rotDer);
+
+        System.out.print("Result: [");
+
+        for(int i = 0; i < n; i++){
+            System.out.print(arreglo[i]);
+            if(i < n-1) System.out.print(", ");
+        }
+        System.out.println("]");
+    }
+
+
+//////////////////////////////////////////////////////////////////////////////////abc
+    
+
+
+
+    private static void reverse(String[] arr, int ini, int fin) {
+        while (ini < fin) {
+            String temp = arr[ini];
+            arr[ini] = arr[fin];
+            arr[fin] = temp;
+            ini++;
+            fin--;
+        }
+    }   
+    
+
+    private static void rotarIzq(String[] arr, int ini, int tam, int rot) {
+        if (rot == 0) return;
+        reverse(arr, ini,ini+rot-1);
+        reverse(arr, ini + rot,ini+tam-1);
+        reverse(arr, ini,ini+tam-1);
+
+    }
+
+    private static void rotarDer(String[] arr, int ini, int tam, int rot) {
+        if (rot == 0) return;
+        reverse(arr, ini + tam - rot, ini+tam-1);
+        reverse(arr, ini, ini+tam-rot-1);
+        reverse(arr, ini, ini+tam-1);
+        
+    }
+
+
+    
+}
