@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class App {
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("secuencia de arr, dar espacio para cada uno");
+        String input = sc.nextLine().trim();
+        String[] arreglo = input.split("\\s+");
+        int n = arreglo.length;
+        System.out.println("T:");
+        int T = sc.nextInt();
+
+
+        int mitad = n / 2;
+        //veces
+        int rotIzq = (T + 1) / 2;
+        int rotDer = T / 2;
+        
+
+
+        rotIzq = rotIzq % mitad;
+        rotDer = rotDer % mitad;
+
+        rotarIzq(arreglo,0, mitad, rotIzq);
+        rotarDer(arreglo, mitad, mitad, rotDer);
+
+        System.out.print("Result: [");
