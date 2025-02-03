@@ -3,3 +3,4 @@ public class HolaRep {
         System.out.println("Hola Repositorio!");
     }
 }
+//polimorfismo, herencia, encapsulamiento, abstraccion
